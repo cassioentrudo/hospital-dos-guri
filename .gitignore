@@ -34,3 +34,6 @@
 
 */obj
 *.user
+*.json
+*.pdb
+*\.suo
