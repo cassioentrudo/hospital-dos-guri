@@ -25,7 +25,26 @@ namespace hospital_dos_guri
 
         private void btnBuscaHospitais_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM Hospital";
+            string query;
+            switch (cbTipoLeito.SelectedItem.ToString().Trim()) {
+                case "Leitos de Emergência":
+                    query = "SELECT * FROM Hospital WHERE ( Emergencia > 0)";
+                    break;
+                case "Leitos de UTI Adulta":
+                    query = "SELECT * FROM Hospital WHERE ( UTI_Adulto > 0)";
+                    break;
+                case "Leitos de UTI Neonatal":
+                    query = "SELECT * FROM Hospital WHERE ( UTI_Neonatal > 0)";
+                    break;
+                case "Leitos de UTI Pediatrica":
+                    query = "SELECT * FROM Hospital WHERE ( UTI_Pediatrica > 0)";
+                    break;
+                case "Todos os Leitos":
+                default:
+                    query = "SELECT * FROM Hospital WHERE (UTI_Adulto > 0 OR UTI_Neonatal > 0 OR UTI_Pediatrica > 0 OR Emergencia > 0)";
+                    break;
+
+            }
 
             SQLiteDataReader sqlite_datareader = this.db.Query(query);
 

@@ -36,5 +36,14 @@ namespace hospital_dos_guri
 
             return sqlite_datareader;
         }
+
+        public void UpdateQuery(string query)
+        {
+            SQLiteCommand sqlite_cmd;
+            sqlite_cmd = this.sqLite.CreateCommand();
+            sqlite_cmd.CommandText = query;
+
+            sqlite_cmd.ExecuteNonQuery();
+        }
     }
 }
