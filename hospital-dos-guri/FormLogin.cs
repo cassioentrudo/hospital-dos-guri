@@ -25,7 +25,7 @@ namespace hospital_dos_guri
                 {
                     case (int)Tipos_de_Usuario.HOSPITAL:
                         Hospital hospital = new Hospital(user);
-                        Form f = new FormGerenciamentoHospital(hospital);
+                        Form f = new FormPesquisaVagas();
                         f.Show();
                         break;
                     case (int)Tipos_de_Usuario.GOVERNO:

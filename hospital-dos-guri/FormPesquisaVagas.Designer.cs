@@ -186,13 +186,13 @@ namespace hospital_dos_guri
             this.dgvHospitais.Size = new System.Drawing.Size(508, 410);
             this.dgvHospitais.TabIndex = 0;
             // 
-            // FormMain
+            // FormPesquisaVagas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 420);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "FormMain";
+            this.Name = "FormPesquisaVagas";
             this.Text = "Gerenciador de Vagas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel1.ResumeLayout(false);
