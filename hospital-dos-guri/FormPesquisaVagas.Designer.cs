@@ -1,7 +1,7 @@
 ﻿
 namespace hospital_dos_guri
 {
-    partial class FormMain
+    partial class FormPesquisaVagas
     {
         /// <summary>
         ///  Required designer variable.

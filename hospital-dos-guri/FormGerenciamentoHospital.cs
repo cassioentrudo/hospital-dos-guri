@@ -9,40 +9,33 @@ using System.Data.SQLite;
 
 namespace hospital_dos_guri
 {
-    public partial class FormGerenciamentoHospital : Form
+    public partial class FormGerenciamentoHospital : System.Windows.Forms.Form
     {
-        LocalDatabase db; 
-        public FormGerenciamentoHospital()
+        Hospital hospital;
+        public FormGerenciamentoHospital(Hospital hosp)
         {
             InitializeComponent();
-            this.db = new LocalDatabase();
+            this.hospital = hosp;
         }
 
         private void btnOfertaLeito_Click(object sender, EventArgs e)
         {
-            int userId = 1; //será obtido atráves do Id do usuário logado
-            string query;
-            int soma = (int)nupNumeroLeitos.Value;
-            switch (cbTipoLeito.SelectedItem.ToString().Trim())
-            {
-                case "Leitos de Emergência":
-                    query = $"UPDATE Hospital SET Emergencia = Emergencia + {soma} WHERE ( ID == {userId})";
-                    break;
-                case "Leitos de UTI Adulta":
-                    query = $"UPDATE Hospital SET UTI_Adulto = UTI_Adulto + {soma} WHERE ( ID == {userId})";
-                    break;
-                case "Leitos de UTI Neonatal":
-                    query = $"UPDATE Hospital SET UTI_Neonatal = UTI_Neonatal + {soma} WHERE ( ID == {userId})";
-                    break;
-                case "Leitos de UTI Pediatrica":
-                    query = $"UPDATE Hospital SET UTI_Pediatrica = UTI_Pediatrica + {soma} WHERE ( ID == {userId})";
-                    break;
-                default:
-                    query = "SELECT * FROM Hospital";
-                    break;
+            int numVagas = (int)nupNumeroLeitos.Value;
+            string tipoVagas = cbTipoLeito.SelectedItem.ToString().Trim();
+            if (this.chbCancelarOferta.Checked)
+                this.hospital.CancelarVagas(numVagas, tipoVagas);
+            else
+                this.hospital.OfertarVagas(numVagas, tipoVagas);
 
-            }
-            this.db.UpdateQuery(query);
+
+        }
+
+        private void chbCancelarOferta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chbCancelarOferta.Checked)
+                this.btnOfertaLeito.Text = "Cancelar Oferta de Leitos";
+            else
+                this.btnOfertaLeito.Text = "Ofertar Leitos";
         }
     }
 }

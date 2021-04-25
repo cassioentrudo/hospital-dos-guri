@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace hospital_dos_guri
 {
-    public partial class FormLogin : Form
+    public partial class FormLogin : System.Windows.Forms.Form
     {
         public FormLogin()
         {
@@ -20,10 +20,13 @@ namespace hospital_dos_guri
             Usuario user = new Usuario(this.tbUsuario.Text);
             if(user.EfetuarLogin(this.tbSenha.Text))
             {
-                this.lbSenha.Text = "logou";
+                this.lbSenha.Text = $"log {user.Tipo_Usuario}";
                 switch (user.Tipo_Usuario)
                 {
                     case (int)Tipos_de_Usuario.HOSPITAL:
+                        Hospital hospital = new Hospital(user);
+                        Form f = new FormGerenciamentoHospital(hospital);
+                        f.Show();
                         break;
                     case (int)Tipos_de_Usuario.GOVERNO:
                         break;
@@ -33,7 +36,7 @@ namespace hospital_dos_guri
             }
             else
             {
-                this.lbSenha.Text = "naologou";
+                this.lbSenha.Text = $"N {user.Tipo_Usuario}";
             }
         }
     }

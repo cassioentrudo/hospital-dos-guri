@@ -12,20 +12,18 @@ using System.Windows.Forms;
 
 namespace hospital_dos_guri
 {
-    public partial class FormMain : Form
+    public partial class FormPesquisaVagas : System.Windows.Forms.Form
     {
-        LocalDatabase db;
 
-        public FormMain()
+        public FormPesquisaVagas()
         {
-            InitializeComponent();
 
-            this.db = new LocalDatabase();
         }
 
         private void btnBuscaHospitais_Click(object sender, EventArgs e)
         {
-            string query;
+            string tipoVagas = cbTipoLeito.SelectedItem.ToString().Trim();
+            /*
             switch (cbTipoLeito.SelectedItem.ToString().Trim()) {
                 case "Leitos de Emergência":
                     query = "SELECT * FROM Hospital WHERE ( Emergencia > 0)";
@@ -64,8 +62,8 @@ namespace hospital_dos_guri
 
                 hospitais.Add(hospital);
             }
-
-            this.dgvHospitais.DataSource = hospitais;
+            */
+            this.dgvHospitais.DataSource = Usuario.PesquisaVagas(tipoVagas);
 
             this.dgvHospitais.Columns[nameof(Hospital.Nome_Hospital)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }

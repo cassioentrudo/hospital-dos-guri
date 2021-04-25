@@ -38,6 +38,7 @@ namespace hospital_dos_guri
             this.cbTipoLeito = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gbSolicitacaoTransferencia = new System.Windows.Forms.GroupBox();
+            this.chbCancelarOferta = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.gbOfertaLeitos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupNumeroLeitos)).BeginInit();
@@ -55,6 +56,7 @@ namespace hospital_dos_guri
             // 
             // gbOfertaLeitos
             // 
+            this.gbOfertaLeitos.Controls.Add(this.chbCancelarOferta);
             this.gbOfertaLeitos.Controls.Add(this.lbNumeroLeitos);
             this.gbOfertaLeitos.Controls.Add(this.lbTipoLeito);
             this.gbOfertaLeitos.Controls.Add(this.btnOfertaLeito);
@@ -66,7 +68,7 @@ namespace hospital_dos_guri
             this.gbOfertaLeitos.Size = new System.Drawing.Size(390, 301);
             this.gbOfertaLeitos.TabIndex = 0;
             this.gbOfertaLeitos.TabStop = false;
-            this.gbOfertaLeitos.Text = "Oferta de Leitos";
+            this.gbOfertaLeitos.Text = "Ofertar/Cancelar Leitos";
             // 
             // lbNumeroLeitos
             // 
@@ -92,7 +94,7 @@ namespace hospital_dos_guri
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOfertaLeito.Location = new System.Drawing.Point(6, 235);
             this.btnOfertaLeito.Name = "btnOfertaLeito";
-            this.btnOfertaLeito.Size = new System.Drawing.Size(377, 47);
+            this.btnOfertaLeito.Size = new System.Drawing.Size(361, 47);
             this.btnOfertaLeito.TabIndex = 2;
             this.btnOfertaLeito.Text = "Ofertar Leitos";
             this.btnOfertaLeito.UseVisualStyleBackColor = true;
@@ -148,6 +150,17 @@ namespace hospital_dos_guri
             this.gbSolicitacaoTransferencia.TabStop = false;
             this.gbSolicitacaoTransferencia.Text = "Solicitação de Transferência";
             // 
+            // chbCancelarOferta
+            // 
+            this.chbCancelarOferta.AutoSize = true;
+            this.chbCancelarOferta.Location = new System.Drawing.Point(7, 149);
+            this.chbCancelarOferta.Name = "chbCancelarOferta";
+            this.chbCancelarOferta.Size = new System.Drawing.Size(158, 19);
+            this.chbCancelarOferta.TabIndex = 5;
+            this.chbCancelarOferta.Text = "Cancelar Oferta de Leitos";
+            this.chbCancelarOferta.UseVisualStyleBackColor = true;
+            this.chbCancelarOferta.CheckedChanged += new System.EventHandler(this.chbCancelarOferta_CheckedChanged);
+            // 
             // FormGerenciamentoHospital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -177,5 +190,6 @@ namespace hospital_dos_guri
         private System.Windows.Forms.NumericUpDown nupNumeroLeitos;
         private System.Windows.Forms.ComboBox cbTipoLeito;
         private System.Windows.Forms.GroupBox gbSolicitacaoTransferencia;
+        private System.Windows.Forms.CheckBox chbCancelarOferta;
     }
 }

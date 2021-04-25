@@ -25,6 +25,11 @@ namespace hospital_dos_guri
             }
         }
 
+        public void Close()
+        {
+            this.sqLite.Close();
+        }
+
         public SQLiteDataReader Query(string query)
         {
             SQLiteDataReader sqlite_datareader;
@@ -33,7 +38,7 @@ namespace hospital_dos_guri
             sqlite_cmd.CommandText = query;
 
             sqlite_datareader = sqlite_cmd.ExecuteReader();
-
+            
             return sqlite_datareader;
         }
 
@@ -42,8 +47,9 @@ namespace hospital_dos_guri
             SQLiteCommand sqlite_cmd;
             sqlite_cmd = this.sqLite.CreateCommand();
             sqlite_cmd.CommandText = query;
-
+            
             sqlite_cmd.ExecuteNonQuery();
+            
         }
     }
 }

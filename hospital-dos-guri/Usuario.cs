@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SQLite;
+using System.ComponentModel;
 
 namespace hospital_dos_guri
 {
@@ -39,8 +40,57 @@ namespace hospital_dos_guri
                     this.ID_Usuario = (Int64)sqlite_datareader["ID_Usuario"];
                 }
             }
-
+            sqlite_datareader.Dispose();
+            db.Close();
             return valido;
+        }
+
+        public static BindingList<Hospital> PesquisaVagas(string tipoVagas)
+        {
+            LocalDatabase db = new LocalDatabase();
+            string query;
+            switch (tipoVagas)
+            {
+                case "Leitos de Emergência":
+                    query = "SELECT * FROM Hospital WHERE ( Emergencia > 0)";
+                    break;
+                case "Leitos de UTI Adulta":
+                    query = "SELECT * FROM Hospital WHERE ( UTI_Adulto > 0)";
+                    break;
+                case "Leitos de UTI Neonatal":
+                    query = "SELECT * FROM Hospital WHERE ( UTI_Neonatal > 0)";
+                    break;
+                case "Leitos de UTI Pediatrica":
+                    query = "SELECT * FROM Hospital WHERE ( UTI_Pediatrica > 0)";
+                    break;
+                case "Todos os Leitos":
+                default:
+                    query = "SELECT * FROM Hospital WHERE (UTI_Adulto > 0 OR UTI_Neonatal > 0 OR UTI_Pediatrica > 0 OR Emergencia > 0)";
+                    break;
+
+            }
+
+            SQLiteDataReader sqlite_datareader = db.Query(query);
+
+            BindingList<Hospital> hospitais = new BindingList<Hospital>();
+
+            while (sqlite_datareader.Read())
+            {
+                Hospital hospital = new Hospital();
+                hospital.ID_Hospital = (Int64)sqlite_datareader[nameof(Hospital.ID_Hospital)];
+                hospital.Nome_Hospital = (string)sqlite_datareader[nameof(Hospital.Nome_Hospital)];
+                hospital.Cidade = (string)sqlite_datareader[nameof(Hospital.Cidade)];
+                hospital.CEP = (string)sqlite_datareader[nameof(Hospital.CEP)];
+                hospital.UTI_Adulto = (Int64)sqlite_datareader[nameof(Hospital.UTI_Adulto)];
+                hospital.UTI_Neonatal = (Int64)sqlite_datareader[nameof(Hospital.UTI_Neonatal)];
+                hospital.UTI_Pediatrica = (Int64)sqlite_datareader[nameof(Hospital.UTI_Pediatrica)];
+                hospital.Emergencia = (Int64)sqlite_datareader[nameof(Hospital.Emergencia)];
+
+                hospitais.Add(hospital);
+            }
+            sqlite_datareader.Dispose();
+            db.Close();
+            return hospitais;
         }
     }
 
