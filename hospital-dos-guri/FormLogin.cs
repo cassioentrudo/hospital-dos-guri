@@ -20,7 +20,7 @@ namespace hospital_dos_guri
             Usuario user = new Usuario(this.tbUsuario.Text);
             if(user.EfetuarLogin(this.tbSenha.Text))
             {
-                this.lbSenha.Text = $"log {user.Tipo_Usuario}";
+               
                 switch (user.Tipo_Usuario)
                 {
                     case (int)Tipos_de_Usuario.HOSPITAL:
@@ -30,6 +30,9 @@ namespace hospital_dos_guri
                         
                         break;
                     case (int)Tipos_de_Usuario.GOVERNO:
+                        Governo governo = new Governo(user);
+                        Form g = new FormGestaoCadastro(governo);
+                        g.Show();
                         break;
                     default:
                         break;

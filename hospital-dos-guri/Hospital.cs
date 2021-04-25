@@ -121,7 +121,7 @@ namespace hospital_dos_guri
         public static void SolicitaCadastro(string nomeUsuario, string nomeHospital, string senha, string CEP, string cidade)
         {
             LocalDatabase db = new LocalDatabase();
-            string query = $"INSERT INTO Usuario (Tipo_usuario,Nome_Usuario,Valido,Senha) Values(1,\"{nomeUsuario}\",0,\"{senha}\")";
+            string query = $"INSERT INTO Usuario (Tipo_usuario,Nome_Usuario,Valido,Senha) Values(1,\"{nomeUsuario}\",'p',\"{senha}\")";
             db.Query(query);
 
             query = $"INSERT INTO Hospital(ID_Usuario,Nome_Hospital,CEP,Cidade,UTI_Adulto,UTI_Neonatal,UTI_Pediatrica,Emergencia) " +
