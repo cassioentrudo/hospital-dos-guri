@@ -117,5 +117,18 @@ namespace hospital_dos_guri
             db.UpdateQuery(query);
             db.Close();
         }
+
+        public static void SolicitaCadastro(string nomeUsuario, string nomeHospital, string senha, string CEP, string cidade)
+        {
+            LocalDatabase db = new LocalDatabase();
+            string query = $"INSERT INTO Usuario (Tipo_usuario,Nome_Usuario,Valido,Senha) Values(1,\"{nomeUsuario}\",0,\"{senha}\")";
+            db.Query(query);
+
+            query = $"INSERT INTO Hospital(ID_Usuario,Nome_Hospital,CEP,Cidade,UTI_Adulto,UTI_Neonatal,UTI_Pediatrica,Emergencia) " +
+                $"Values((Select ID_Usuario from Usuario WHERE Nome_Usuario =\"{nomeUsuario}\"),\"{nomeHospital} \",\"{CEP}\",\"{cidade}\",0,0,0,0)";
+            db.Query(query);
+
+            db.Close();
+        }
     }
 }

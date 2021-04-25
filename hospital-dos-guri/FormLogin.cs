@@ -25,8 +25,9 @@ namespace hospital_dos_guri
                 {
                     case (int)Tipos_de_Usuario.HOSPITAL:
                         Hospital hospital = new Hospital(user);
-                        Form f = new FormPesquisaVagas();
+                        Form f = new FormGerenciamentoHospital(hospital);
                         f.Show();
+                        
                         break;
                     case (int)Tipos_de_Usuario.GOVERNO:
                         break;
@@ -36,8 +37,14 @@ namespace hospital_dos_guri
             }
             else
             {
-                this.lbSenha.Text = $"N {user.Tipo_Usuario}";
+                
             }
+        }
+
+        private void llbSolicitaCadastro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form f = new FormSolicitaCadastro();
+            f.Show();
         }
     }
 }

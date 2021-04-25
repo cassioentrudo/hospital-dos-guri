@@ -28,7 +28,7 @@ namespace hospital_dos_guri
             bool valido = false;
             LocalDatabase db = new LocalDatabase();
 
-            string query = "SELECT Senha, ID_Usuario, Tipo_Usuario from Usuario WHERE Nome_Usuario = " + '"' + this.Nome_Usuario + '"';
+            string query = "SELECT Senha, ID_Usuario, Tipo_Usuario from Usuario WHERE (Nome_Usuario = " + '"' + this.Nome_Usuario + '"'+") AND (Valido = TRUE)";
 
             SQLiteDataReader sqlite_datareader = db.Query(query);
             if(sqlite_datareader.Read())

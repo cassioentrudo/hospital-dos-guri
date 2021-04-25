@@ -27,7 +27,19 @@ namespace hospital_dos_guri
             else
                 this.hospital.OfertarVagas(numVagas, tipoVagas);
 
+            
+            string mensagem = "Deseja Realizar outra Operação?";
+            string legenda = "Operação Realizada com Sucesso";
+            MessageBoxButtons bot = MessageBoxButtons.YesNo;
+            DialogResult resultado;
 
+           
+            resultado = MessageBox.Show(mensagem, legenda, bot);
+            if (resultado == System.Windows.Forms.DialogResult.No)
+            {
+                
+                this.Close();
+            }
         }
 
         private void chbCancelarOferta_CheckedChanged(object sender, EventArgs e)
