@@ -34,7 +34,7 @@ namespace hospital_dos_guri
         private void btRejeita_Click(object sender, EventArgs e)
         {
             long id = (long)this.dgvHospitais.SelectedRows[0].Cells[0].Value;
-            this.governo.ValidaCadastro(id, 'r');
+            this.governo.ValidaCadastro(id, 'i');
 
             this.dgvHospitais.DataSource = this.governo.ListaUsuariosPendentes();
 
