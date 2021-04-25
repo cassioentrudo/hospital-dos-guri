@@ -53,8 +53,8 @@ namespace hospital_dos_guri
             while (sqlite_datareader.Read())
             {
                 Hospital hospital = new Hospital();
-                hospital.id = (Int64)sqlite_datareader[nameof(Hospital.id)];
-                hospital.Nome = (string)sqlite_datareader[nameof(Hospital.Nome)];
+                hospital.ID_Hospital = (Int64)sqlite_datareader[nameof(Hospital.ID_Hospital)];
+                hospital.Nome_Hospital = (string)sqlite_datareader[nameof(Hospital.Nome_Hospital)];
                 hospital.Cidade = (string)sqlite_datareader[nameof(Hospital.Cidade)];
                 hospital.CEP = (string)sqlite_datareader[nameof(Hospital.CEP)];
                 hospital.UTI_Adulto = (Int64)sqlite_datareader[nameof(Hospital.UTI_Adulto)];
@@ -67,7 +67,7 @@ namespace hospital_dos_guri
 
             this.dgvHospitais.DataSource = hospitais;
 
-            this.dgvHospitais.Columns[nameof(Hospital.Nome)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvHospitais.Columns[nameof(Hospital.Nome_Hospital)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }

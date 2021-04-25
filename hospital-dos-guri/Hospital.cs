@@ -1,9 +1,9 @@
 ﻿namespace hospital_dos_guri
 {
-    public class Hospital
+    public class Hospital : Usuario
     {
-        public long id { get; set; }
-        public string Nome { get; set; }
+        public long ID_Hospital { get; set; }
+        public string Nome_Hospital { get; set; }
         public string Cidade { get; set; }
         public string CEP { get; set; }
         public long UTI_Adulto { get; set; }
