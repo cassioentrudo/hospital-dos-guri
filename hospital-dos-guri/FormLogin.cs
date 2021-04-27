@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace hospital_dos_guri
 {
-    public partial class FormLogin : System.Windows.Forms.Form
+    public partial class FormLogin : Form
     {
+
+        public Usuario CurrentUser { get; set; }
+
         public FormLogin()
         {
             InitializeComponent();
@@ -17,37 +15,31 @@ namespace hospital_dos_guri
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            Usuario user = new Usuario(this.tbUsuario.Text);
-            if(user.EfetuarLogin(this.tbSenha.Text))
+            this.DialogResult = DialogResult.None;
+
+            this.CurrentUser = new Usuario(this.tbUsuario.Text);
+
+            if (this.CurrentUser.EfetuarLogin(this.tbSenha.Text) == false)
             {
-               
-                switch (user.Tipo_Usuario)
-                {
-                    case (int)Tipos_de_Usuario.HOSPITAL:
-                        Hospital hospital = new Hospital(user);
-                        Form f = new FormGerenciamentoHospital(hospital);
-                        f.Show();
-                        
-                        break;
-                    case (int)Tipos_de_Usuario.GOVERNO:
-                        Governo governo = new Governo(user);
-                        Form g = new FormGestaoCadastro(governo);
-                        g.Show();
-                        break;
-                    default:
-                        break;
-                }
+                MessageBox.Show("Falha ao realizar Login. Verifique os dados digitados e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                
+                this.DialogResult = DialogResult.OK;
             }
+
+            this.Close();
         }
 
         private void llbSolicitaCadastro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form f = new FormSolicitaCadastro();
             f.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

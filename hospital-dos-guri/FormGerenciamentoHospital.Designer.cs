@@ -100,9 +100,9 @@ namespace hospital_dos_guri
             // 
             this.btnOfertaLeito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOfertaLeito.Location = new System.Drawing.Point(6, 208);
+            this.btnOfertaLeito.Location = new System.Drawing.Point(7, 208);
             this.btnOfertaLeito.Name = "btnOfertaLeito";
-            this.btnOfertaLeito.Size = new System.Drawing.Size(347, 47);
+            this.btnOfertaLeito.Size = new System.Drawing.Size(360, 47);
             this.btnOfertaLeito.TabIndex = 2;
             this.btnOfertaLeito.Text = "Ofertar Leitos";
             this.btnOfertaLeito.UseVisualStyleBackColor = true;
@@ -126,11 +126,8 @@ namespace hospital_dos_guri
             this.cbTipoLeito.FormattingEnabled = true;
             this.cbTipoLeito.Items.AddRange(new object[] {
             "Leitos de Emergência",
-            "",
             "Leitos de UTI Adulta",
-            "",
             "Leitos de UTI Neonatal",
-            "",
             "Leitos de UTI Pediatrica"});
             this.cbTipoLeito.Location = new System.Drawing.Point(7, 47);
             this.cbTipoLeito.Name = "cbTipoLeito";
@@ -141,9 +138,12 @@ namespace hospital_dos_guri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(376, 274);
             this.Controls.Add(this.panelAll);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormGerenciamentoHospital";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciamento de Hospital";
             this.panelAll.ResumeLayout(false);
             this.gbOfertaLeitos.ResumeLayout(false);

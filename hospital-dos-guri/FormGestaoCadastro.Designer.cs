@@ -91,12 +91,14 @@ namespace hospital_dos_guri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 509);
             this.Controls.Add(this.btAprova);
             this.Controls.Add(this.btRejeita);
             this.Controls.Add(this.gbGestaoCadastro);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormGestaoCadastro";
-            this.Text = "FormGestaoCadastro";
+            this.Text = "Gestão de Cadastros";
             this.gbGestaoCadastro.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHospitais)).EndInit();
             this.ResumeLayout(false);

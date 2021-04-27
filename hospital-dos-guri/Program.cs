@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace hospital_dos_guri
@@ -17,8 +14,7 @@ namespace hospital_dos_guri
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
-            //Application.Run(new FormMain());
+            Application.Run(new FormMain());
             //Application.Run(new FormGerenciamentoHospital());
             //Application.Run(new FormMain());
         }

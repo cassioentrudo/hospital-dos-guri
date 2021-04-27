@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.SQLite;
 
 namespace hospital_dos_guri
 {
@@ -20,7 +14,13 @@ namespace hospital_dos_guri
 
         private void btnOfertaLeito_Click(object sender, EventArgs e)
         {
+            if (cbTipoLeito.SelectedItem == null)
+            {
+                return;
+            }
+
             int numVagas = (int)nupNumeroLeitos.Value;
+
             string tipoVagas = cbTipoLeito.SelectedItem.ToString().Trim();
             if (this.chbCancelarOferta.Checked)
                 this.hospital.CancelarVagas(numVagas, tipoVagas);
@@ -35,7 +35,7 @@ namespace hospital_dos_guri
 
            
             resultado = MessageBox.Show(mensagem, legenda, bot);
-            if (resultado == System.Windows.Forms.DialogResult.No)
+            if (resultado == DialogResult.No)
             {
                 
                 this.Close();

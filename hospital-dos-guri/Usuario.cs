@@ -9,7 +9,6 @@ namespace hospital_dos_guri
     enum Tipos_de_Usuario : long { HOSPITAL = 1, GOVERNO = 2 }
     public class Usuario
     {
-
         public long ID_Usuario { get; set; }
         public string Nome_Usuario { get; set; }
         public long Tipo_Usuario { get; set; }

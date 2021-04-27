@@ -30,18 +30,20 @@ namespace hospital_dos_guri
         private void InitializeComponent()
         {
             this.gbLogin = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbcadastro = new System.Windows.Forms.Label();
+            this.llbSolicitaCadastro = new System.Windows.Forms.LinkLabel();
             this.btLogin = new System.Windows.Forms.Button();
             this.tbSenha = new System.Windows.Forms.TextBox();
             this.tbUsuario = new System.Windows.Forms.TextBox();
             this.lbSenha = new System.Windows.Forms.Label();
             this.lbUsuario = new System.Windows.Forms.Label();
-            this.llbSolicitaCadastro = new System.Windows.Forms.LinkLabel();
-            this.lbcadastro = new System.Windows.Forms.Label();
             this.gbLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbLogin
             // 
+            this.gbLogin.Controls.Add(this.button1);
             this.gbLogin.Controls.Add(this.lbcadastro);
             this.gbLogin.Controls.Add(this.llbSolicitaCadastro);
             this.gbLogin.Controls.Add(this.btLogin);
@@ -56,9 +58,39 @@ namespace hospital_dos_guri
             this.gbLogin.TabStop = false;
             this.gbLogin.Text = "Login";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(288, 162);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 29);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Sair";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lbcadastro
+            // 
+            this.lbcadastro.AutoSize = true;
+            this.lbcadastro.Location = new System.Drawing.Point(109, 125);
+            this.lbcadastro.Name = "lbcadastro";
+            this.lbcadastro.Size = new System.Drawing.Size(104, 15);
+            this.lbcadastro.TabIndex = 6;
+            this.lbcadastro.Text = "Não é cadastrado?";
+            // 
+            // llbSolicitaCadastro
+            // 
+            this.llbSolicitaCadastro.AutoSize = true;
+            this.llbSolicitaCadastro.Location = new System.Drawing.Point(219, 125);
+            this.llbSolicitaCadastro.Name = "llbSolicitaCadastro";
+            this.llbSolicitaCadastro.Size = new System.Drawing.Size(99, 15);
+            this.llbSolicitaCadastro.TabIndex = 5;
+            this.llbSolicitaCadastro.TabStop = true;
+            this.llbSolicitaCadastro.Text = "Solicitar Cadastro";
+            this.llbSolicitaCadastro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbSolicitaCadastro_LinkClicked);
+            // 
             // btLogin
             // 
-            this.btLogin.Location = new System.Drawing.Point(288, 162);
+            this.btLogin.Location = new System.Drawing.Point(151, 162);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(131, 29);
             this.btLogin.TabIndex = 4;
@@ -72,8 +104,8 @@ namespace hospital_dos_guri
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.Size = new System.Drawing.Size(327, 23);
             this.tbSenha.TabIndex = 3;
+            this.tbSenha.Text = "1234567";
             this.tbSenha.UseSystemPasswordChar = true;
-            this.tbSenha.Enter += new System.EventHandler(this.btLogin_Click);
             // 
             // tbUsuario
             // 
@@ -81,6 +113,7 @@ namespace hospital_dos_guri
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(327, 23);
             this.tbUsuario.TabIndex = 2;
+            this.tbUsuario.Text = "hosp_salv";
             // 
             // lbSenha
             // 
@@ -102,34 +135,17 @@ namespace hospital_dos_guri
             this.lbUsuario.TabIndex = 0;
             this.lbUsuario.Text = "Usuário:";
             // 
-            // llbSolicitaCadastro
-            // 
-            this.llbSolicitaCadastro.AutoSize = true;
-            this.llbSolicitaCadastro.Location = new System.Drawing.Point(219, 125);
-            this.llbSolicitaCadastro.Name = "llbSolicitaCadastro";
-            this.llbSolicitaCadastro.Size = new System.Drawing.Size(99, 15);
-            this.llbSolicitaCadastro.TabIndex = 5;
-            this.llbSolicitaCadastro.TabStop = true;
-            this.llbSolicitaCadastro.Text = "Solicitar Cadastro";
-            this.llbSolicitaCadastro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbSolicitaCadastro_LinkClicked);
-            // 
-            // lbcadastro
-            // 
-            this.lbcadastro.AutoSize = true;
-            this.lbcadastro.Location = new System.Drawing.Point(109, 125);
-            this.lbcadastro.Name = "lbcadastro";
-            this.lbcadastro.Size = new System.Drawing.Size(104, 15);
-            this.lbcadastro.TabIndex = 6;
-            this.lbcadastro.Text = "Não é cadastrado?";
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(442, 214);
             this.Controls.Add(this.gbLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
-            this.Text = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
             this.gbLogin.ResumeLayout(false);
             this.gbLogin.PerformLayout();
             this.ResumeLayout(false);
@@ -146,5 +162,6 @@ namespace hospital_dos_guri
         private System.Windows.Forms.Button btLogin;
         private System.Windows.Forms.Label lbcadastro;
         private System.Windows.Forms.LinkLabel llbSolicitaCadastro;
+        private System.Windows.Forms.Button button1;
     }
 }
