@@ -17,7 +17,7 @@ namespace hospital_dos_guri
             string CEP = this.tbCEP.Text;
             string cidade = this.tbCidade.Text;
             string senha = this.tbSenha.Text;
-            Hospital.SolicitaCadastro(nomeUsu,nomeHosp,senha,cidade,CEP);
+            Hospital.SolicitaCadastro(nomeUsu,nomeHosp,senha,CEP,cidade);
             string mensagem = "Solicitação de Cadastro Enviada";
             string legenda = "Sua Solicitação de Cadastro foi enviada com Sucesso!";
             MessageBoxButtons bot = MessageBoxButtons.OK;
