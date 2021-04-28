@@ -42,6 +42,7 @@ namespace hospital_dos_guri
             // 
             // panelAll
             // 
+            this.panelAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelAll.Controls.Add(this.groupBox1);
             this.panelAll.Controls.Add(this.btnSolicitar);
             this.panelAll.Controls.Add(this.btnCancelar);
@@ -59,7 +60,7 @@ namespace hospital_dos_guri
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(5, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(292, 138);
+            this.groupBox1.Size = new System.Drawing.Size(290, 136);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solicitação de vaga de leito";
@@ -83,9 +84,9 @@ namespace hospital_dos_guri
             // btnSolicitar
             // 
             this.btnSolicitar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSolicitar.Location = new System.Drawing.Point(5, 143);
+            this.btnSolicitar.Location = new System.Drawing.Point(5, 141);
             this.btnSolicitar.Name = "btnSolicitar";
-            this.btnSolicitar.Size = new System.Drawing.Size(292, 38);
+            this.btnSolicitar.Size = new System.Drawing.Size(290, 38);
             this.btnSolicitar.TabIndex = 2;
             this.btnSolicitar.Text = "Solicitar";
             this.btnSolicitar.UseVisualStyleBackColor = true;
@@ -94,9 +95,9 @@ namespace hospital_dos_guri
             // btnCancelar
             // 
             this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnCancelar.Location = new System.Drawing.Point(5, 181);
+            this.btnCancelar.Location = new System.Drawing.Point(5, 179);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(292, 38);
+            this.btnCancelar.Size = new System.Drawing.Size(290, 38);
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;

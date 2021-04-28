@@ -32,6 +32,8 @@ namespace hospital_dos_guri
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.tbCep = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbCidadeHospital = new System.Windows.Forms.Label();
             this.lbNomeHospital = new System.Windows.Forms.Label();
             this.tbNomeHospital = new System.Windows.Forms.TextBox();
@@ -64,13 +66,15 @@ namespace hospital_dos_guri
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panelAll);
-            this.splitContainer1.Size = new System.Drawing.Size(693, 420);
-            this.splitContainer1.SplitterDistance = 173;
+            this.splitContainer1.Size = new System.Drawing.Size(986, 646);
+            this.splitContainer1.SplitterDistance = 246;
             this.splitContainer1.TabIndex = 0;
             // 
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelLeft.Controls.Add(this.tbCep);
+            this.panelLeft.Controls.Add(this.label1);
             this.panelLeft.Controls.Add(this.lbCidadeHospital);
             this.panelLeft.Controls.Add(this.lbNomeHospital);
             this.panelLeft.Controls.Add(this.tbNomeHospital);
@@ -82,8 +86,26 @@ namespace hospital_dos_guri
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Padding = new System.Windows.Forms.Padding(5);
-            this.panelLeft.Size = new System.Drawing.Size(173, 420);
+            this.panelLeft.Size = new System.Drawing.Size(246, 646);
             this.panelLeft.TabIndex = 0;
+            // 
+            // tbCep
+            // 
+            this.tbCep.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCep.Location = new System.Drawing.Point(5, 121);
+            this.tbCep.Name = "tbCep";
+            this.tbCep.Size = new System.Drawing.Size(234, 23);
+            this.tbCep.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Selecione o Tipo de Leito:";
             // 
             // lbCidadeHospital
             // 
@@ -109,7 +131,7 @@ namespace hospital_dos_guri
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNomeHospital.Location = new System.Drawing.Point(5, 27);
             this.tbNomeHospital.Name = "tbNomeHospital";
-            this.tbNomeHospital.Size = new System.Drawing.Size(163, 23);
+            this.tbNomeHospital.Size = new System.Drawing.Size(234, 23);
             this.tbNomeHospital.TabIndex = 4;
             // 
             // tbCidadeHospital
@@ -118,7 +140,7 @@ namespace hospital_dos_guri
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbCidadeHospital.Location = new System.Drawing.Point(5, 77);
             this.tbCidadeHospital.Name = "tbCidadeHospital";
-            this.tbCidadeHospital.Size = new System.Drawing.Size(163, 23);
+            this.tbCidadeHospital.Size = new System.Drawing.Size(234, 23);
             this.tbCidadeHospital.TabIndex = 3;
             // 
             // lbTipoLeito
@@ -126,9 +148,9 @@ namespace hospital_dos_guri
             this.lbTipoLeito.AutoSize = true;
             this.lbTipoLeito.Location = new System.Drawing.Point(5, 103);
             this.lbTipoLeito.Name = "lbTipoLeito";
-            this.lbTipoLeito.Size = new System.Drawing.Size(141, 15);
+            this.lbTipoLeito.Size = new System.Drawing.Size(105, 15);
             this.lbTipoLeito.TabIndex = 2;
-            this.lbTipoLeito.Text = "Selecione o Tipo de Leito:";
+            this.lbTipoLeito.Text = "Selecione um CEP:";
             // 
             // cbTipoLeito
             // 
@@ -136,18 +158,18 @@ namespace hospital_dos_guri
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTipoLeito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoLeito.FormattingEnabled = true;
-            this.cbTipoLeito.Location = new System.Drawing.Point(5, 121);
+            this.cbTipoLeito.Location = new System.Drawing.Point(5, 163);
             this.cbTipoLeito.Name = "cbTipoLeito";
-            this.cbTipoLeito.Size = new System.Drawing.Size(163, 23);
+            this.cbTipoLeito.Size = new System.Drawing.Size(232, 23);
             this.cbTipoLeito.TabIndex = 1;
             this.cbTipoLeito.Tag = "";
             // 
             // btnBuscaHospitais
             // 
             this.btnBuscaHospitais.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnBuscaHospitais.Location = new System.Drawing.Point(5, 377);
+            this.btnBuscaHospitais.Location = new System.Drawing.Point(5, 603);
             this.btnBuscaHospitais.Name = "btnBuscaHospitais";
-            this.btnBuscaHospitais.Size = new System.Drawing.Size(163, 38);
+            this.btnBuscaHospitais.Size = new System.Drawing.Size(236, 38);
             this.btnBuscaHospitais.TabIndex = 0;
             this.btnBuscaHospitais.Text = "Pesquisar Vagas";
             this.btnBuscaHospitais.UseVisualStyleBackColor = true;
@@ -160,7 +182,7 @@ namespace hospital_dos_guri
             this.panelAll.Location = new System.Drawing.Point(0, 0);
             this.panelAll.Name = "panelAll";
             this.panelAll.Padding = new System.Windows.Forms.Padding(5);
-            this.panelAll.Size = new System.Drawing.Size(516, 420);
+            this.panelAll.Size = new System.Drawing.Size(736, 646);
             this.panelAll.TabIndex = 1;
             // 
             // dgvHospitais
@@ -180,7 +202,7 @@ namespace hospital_dos_guri
             this.dgvHospitais.RowHeadersVisible = false;
             this.dgvHospitais.RowTemplate.Height = 25;
             this.dgvHospitais.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHospitais.Size = new System.Drawing.Size(508, 386);
+            this.dgvHospitais.Size = new System.Drawing.Size(728, 612);
             this.dgvHospitais.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -193,7 +215,7 @@ namespace hospital_dos_guri
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(693, 420);
+            this.ClientSize = new System.Drawing.Size(986, 646);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPesquisaVagas";
@@ -225,6 +247,8 @@ namespace hospital_dos_guri
         private System.Windows.Forms.TextBox tbNomeHospital;
         private System.Windows.Forms.TextBox tbCidadeHospital;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox tbCep;
+        private System.Windows.Forms.Label label1;
     }
 }
 

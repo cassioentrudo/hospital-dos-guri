@@ -21,6 +21,7 @@ namespace hospital_dos_guri
             contextSolicita.ItemClicked += ContextSolicita_ItemClicked; ;
             this.ContextMenuStrip = contextSolicita;
 
+            this.cbTipoLeito.SelectedIndex = 0;
             this.hospital = hospital;
         }
 
@@ -64,7 +65,7 @@ namespace hospital_dos_guri
 
             string tipoVagas = cbTipoLeito.SelectedItem.ToString().Trim();
             
-            this.dgvHospitais.DataSource = Usuario.PesquisaVagas(tipoVagas);
+            this.dgvHospitais.DataSource = Usuario.PesquisaVagas(tipoVagas, tbNomeHospital.Text, tbCep.Text, tbCidadeHospital.Text);
 
             this.dgvHospitais.Columns[nameof(Hospital.ID_Hospital)].Visible = false;
             this.dgvHospitais.Columns[nameof(Hospital.ID_Usuario)].Visible = false;

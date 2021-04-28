@@ -44,30 +44,14 @@ namespace hospital_dos_guri
             return valido;
         }
 
-        public static BindingList<Hospital> PesquisaVagas(string tipoVagas)
+        public static BindingList<Hospital> PesquisaVagas(string tipoVagas, string nome, string cep, string cidade)
         {
             LocalDatabase db = new LocalDatabase();
-            string query;
-            switch (tipoVagas)
-            {
-                case "Leitos de Emergência":
-                    query = "SELECT * FROM Hospital WHERE ( Emergencia > 0)";
-                    break;
-                case "Leitos de UTI Adulta":
-                    query = "SELECT * FROM Hospital WHERE ( UTI_Adulto > 0)";
-                    break;
-                case "Leitos de UTI Neonatal":
-                    query = "SELECT * FROM Hospital WHERE ( UTI_Neonatal > 0)";
-                    break;
-                case "Leitos de UTI Pediatrica":
-                    query = "SELECT * FROM Hospital WHERE ( UTI_Pediatrica > 0)";
-                    break;
-                case "Todos os Leitos":
-                default:
-                    query = "SELECT * FROM Hospital WHERE (UTI_Adulto > 0 OR UTI_Neonatal > 0 OR UTI_Pediatrica > 0 OR Emergencia > 0)";
-                    break;
+            string query = $"SELECT * FROM Hospital WHERE { tipoVagas} > 0";
 
-            }
+            if (nome != "") { query += $" AND {nameof(Hospital.Nome_Hospital)} == '{nome}'"; }
+            if (cep != "") { query += $" AND {nameof(Hospital.CEP)} == '{cep}'"; }
+            if (cidade != "") { query += $" AND {nameof(Hospital.Cidade)} == '{cidade}'"; }
 
             SQLiteDataReader sqlite_datareader = db.Query(query);
 
