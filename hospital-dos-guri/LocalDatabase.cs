@@ -48,8 +48,7 @@ namespace hospital_dos_guri
             sqlite_cmd = this.sqLite.CreateCommand();
             sqlite_cmd.CommandText = query;
             
-            sqlite_cmd.ExecuteNonQuery();
-            
+            sqlite_cmd.ExecuteNonQuery();            
         }
     }
 }

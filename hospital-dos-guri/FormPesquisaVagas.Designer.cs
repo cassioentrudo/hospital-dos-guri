@@ -29,6 +29,7 @@ namespace hospital_dos_guri
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.lbCidadeHospital = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@ namespace hospital_dos_guri
             this.btnBuscaHospitais = new System.Windows.Forms.Button();
             this.panelAll = new System.Windows.Forms.Panel();
             this.dgvHospitais = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -68,6 +70,7 @@ namespace hospital_dos_guri
             // 
             // panelLeft
             // 
+            this.panelLeft.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panelLeft.Controls.Add(this.lbCidadeHospital);
             this.panelLeft.Controls.Add(this.lbNomeHospital);
             this.panelLeft.Controls.Add(this.tbNomeHospital);
@@ -133,12 +136,6 @@ namespace hospital_dos_guri
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTipoLeito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoLeito.FormattingEnabled = true;
-            this.cbTipoLeito.Items.AddRange(new object[] {
-            "Leitos de Emergência",
-            "Leitos de UTI Adulta",
-            "Leitos de UTI Neonatal",
-            "Leitos de UTI Pediatrica",
-            "Todos os Leitos"});
             this.cbTipoLeito.Location = new System.Drawing.Point(5, 121);
             this.cbTipoLeito.Name = "cbTipoLeito";
             this.cbTipoLeito.Size = new System.Drawing.Size(163, 23);
@@ -183,15 +180,22 @@ namespace hospital_dos_guri
             this.dgvHospitais.RowHeadersVisible = false;
             this.dgvHospitais.RowTemplate.Height = 25;
             this.dgvHospitais.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHospitais.Size = new System.Drawing.Size(508, 410);
+            this.dgvHospitais.Size = new System.Drawing.Size(508, 386);
             this.dgvHospitais.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // FormPesquisaVagas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(693, 420);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPesquisaVagas";
             this.Text = "Gerenciador de Vagas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -220,6 +224,7 @@ namespace hospital_dos_guri
         private System.Windows.Forms.Label lbNomeHospital;
         private System.Windows.Forms.TextBox tbNomeHospital;
         private System.Windows.Forms.TextBox tbCidadeHospital;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

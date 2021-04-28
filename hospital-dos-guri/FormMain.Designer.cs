@@ -58,8 +58,8 @@ namespace hospital_dos_guri
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panelRight);
-            this.splitContainer1.Size = new System.Drawing.Size(1165, 637);
-            this.splitContainer1.SplitterDistance = 250;
+            this.splitContainer1.Size = new System.Drawing.Size(1487, 647);
+            this.splitContainer1.SplitterDistance = 319;
             this.splitContainer1.TabIndex = 0;
             // 
             // panelButtons
@@ -75,15 +75,15 @@ namespace hospital_dos_guri
             this.panelButtons.Location = new System.Drawing.Point(0, 0);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Padding = new System.Windows.Forms.Padding(5);
-            this.panelButtons.Size = new System.Drawing.Size(248, 635);
+            this.panelButtons.Size = new System.Drawing.Size(317, 645);
             this.panelButtons.TabIndex = 0;
             // 
             // btnClose
             // 
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnClose.Location = new System.Drawing.Point(5, 555);
+            this.btnClose.Location = new System.Drawing.Point(5, 565);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(236, 73);
+            this.btnClose.Size = new System.Drawing.Size(305, 73);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "SAIR";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -94,17 +94,18 @@ namespace hospital_dos_guri
             this.btnGestaoTransferencias.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGestaoTransferencias.Location = new System.Drawing.Point(5, 224);
             this.btnGestaoTransferencias.Name = "btnGestaoTransferencias";
-            this.btnGestaoTransferencias.Size = new System.Drawing.Size(236, 73);
+            this.btnGestaoTransferencias.Size = new System.Drawing.Size(305, 73);
             this.btnGestaoTransferencias.TabIndex = 3;
             this.btnGestaoTransferencias.Text = "GESTÃO DE TRANSFERÊNCIAS";
             this.btnGestaoTransferencias.UseVisualStyleBackColor = true;
+            this.btnGestaoTransferencias.Click += new System.EventHandler(this.btnGestaoTransferencias_Click);
             // 
             // btnGestaoCadastros
             // 
             this.btnGestaoCadastros.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGestaoCadastros.Location = new System.Drawing.Point(5, 151);
             this.btnGestaoCadastros.Name = "btnGestaoCadastros";
-            this.btnGestaoCadastros.Size = new System.Drawing.Size(236, 73);
+            this.btnGestaoCadastros.Size = new System.Drawing.Size(305, 73);
             this.btnGestaoCadastros.TabIndex = 2;
             this.btnGestaoCadastros.Text = "GESTÃO DE CADASTROS";
             this.btnGestaoCadastros.UseVisualStyleBackColor = true;
@@ -115,17 +116,18 @@ namespace hospital_dos_guri
             this.btnSolicitarLeitos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSolicitarLeitos.Location = new System.Drawing.Point(5, 78);
             this.btnSolicitarLeitos.Name = "btnSolicitarLeitos";
-            this.btnSolicitarLeitos.Size = new System.Drawing.Size(236, 73);
+            this.btnSolicitarLeitos.Size = new System.Drawing.Size(305, 73);
             this.btnSolicitarLeitos.TabIndex = 1;
             this.btnSolicitarLeitos.Text = "SOLICITAR LEITOS";
             this.btnSolicitarLeitos.UseVisualStyleBackColor = true;
+            this.btnSolicitarLeitos.Click += new System.EventHandler(this.btnSolicitarLeitos_Click);
             // 
             // btnOfertarLeitos
             // 
             this.btnOfertarLeitos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOfertarLeitos.Location = new System.Drawing.Point(5, 5);
             this.btnOfertarLeitos.Name = "btnOfertarLeitos";
-            this.btnOfertarLeitos.Size = new System.Drawing.Size(236, 73);
+            this.btnOfertarLeitos.Size = new System.Drawing.Size(305, 73);
             this.btnOfertarLeitos.TabIndex = 0;
             this.btnOfertarLeitos.Text = "OFERTAR/CANCELAR LEITOS";
             this.btnOfertarLeitos.UseVisualStyleBackColor = true;
@@ -139,7 +141,7 @@ namespace hospital_dos_guri
             this.panelRight.Location = new System.Drawing.Point(0, 0);
             this.panelRight.Name = "panelRight";
             this.panelRight.Padding = new System.Windows.Forms.Padding(5);
-            this.panelRight.Size = new System.Drawing.Size(909, 635);
+            this.panelRight.Size = new System.Drawing.Size(1162, 645);
             this.panelRight.TabIndex = 1;
             // 
             // FormMain
@@ -147,7 +149,7 @@ namespace hospital_dos_guri
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1165, 637);
+            this.ClientSize = new System.Drawing.Size(1487, 647);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMain";
