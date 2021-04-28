@@ -94,6 +94,14 @@ namespace hospital_dos_guri
         private void btnGestaoTransferencias_Click(object sender, System.EventArgs e)
         {
             this.panelRight.Controls.Clear();
+
+            FormGerenciaTransferencias formGerenciaTransferencias = new FormGerenciaTransferencias();
+            formGerenciaTransferencias.TopLevel = false;
+            formGerenciaTransferencias.AutoScroll = true;
+            formGerenciaTransferencias.Dock = DockStyle.Fill;
+
+            this.panelRight.Controls.Add(formGerenciaTransferencias);
+            formGerenciaTransferencias.Show();
         }
     }
 }

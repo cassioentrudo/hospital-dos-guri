@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data.SQLite;
 using System.ComponentModel;
+using System.Data.SQLite;
 
 namespace hospital_dos_guri
 {
@@ -74,6 +72,33 @@ namespace hospital_dos_guri
             sqlite_datareader.Dispose();
             db.Close();
             return hospitais;
+        }
+
+        public static BindingList<Transferencias> PesquisaTransferenciasPendentes()
+        {
+            LocalDatabase db = new LocalDatabase();
+            string query = $"SELECT * FROM Transferencias WHERE Status == 'r'";
+            SQLiteDataReader sqlite_datareader = db.Query(query);
+
+            BindingList<Transferencias> transferencias = new BindingList<Transferencias>();
+
+            while (sqlite_datareader.Read())
+            {
+                Transferencias transferencia = new Transferencias();
+                transferencia.ID_Transferencia = (Int64)sqlite_datareader[nameof(Transferencias.ID_Transferencia)];
+                transferencia.ID_Hospital_Origem = (Int64)sqlite_datareader[nameof(Transferencias.ID_Hospital_Origem)];
+                transferencia.ID_Hospital_Destino = (Int64)sqlite_datareader[nameof(Transferencias.ID_Hospital_Destino)];
+                transferencia.UTI_Adulto = (Int64)sqlite_datareader[nameof(Transferencias.UTI_Adulto)];
+                transferencia.UTI_Neonatal = (Int64)sqlite_datareader[nameof(Transferencias.UTI_Neonatal)]; 
+                transferencia.UTI_Pediatrica = (Int64)sqlite_datareader[nameof(Transferencias.UTI_Pediatrica)];
+                transferencia.Emergencia = (Int64)sqlite_datareader[nameof(Transferencias.Emergencia)];
+                transferencia.Status = (string)sqlite_datareader[nameof(Transferencias.Status)];
+
+                transferencias.Add(transferencia);
+            }
+            sqlite_datareader.Dispose();
+            db.Close();
+            return transferencias;
         }
     }
 

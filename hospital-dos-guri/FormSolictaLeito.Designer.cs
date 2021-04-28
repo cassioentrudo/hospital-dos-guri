@@ -68,9 +68,19 @@ namespace hospital_dos_guri
             // nudQuantidade
             // 
             this.nudQuantidade.Location = new System.Drawing.Point(7, 60);
+            this.nudQuantidade.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudQuantidade.Name = "nudQuantidade";
             this.nudQuantidade.Size = new System.Drawing.Size(118, 23);
             this.nudQuantidade.TabIndex = 1;
+            this.nudQuantidade.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
