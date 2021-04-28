@@ -191,18 +191,16 @@ namespace hospital_dos_guri
             this.dgvHospitais.AllowUserToDeleteRows = false;
             this.dgvHospitais.AllowUserToResizeColumns = false;
             this.dgvHospitais.AllowUserToResizeRows = false;
-            this.dgvHospitais.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHospitais.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgvHospitais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHospitais.Location = new System.Drawing.Point(3, 5);
+            this.dgvHospitais.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHospitais.Location = new System.Drawing.Point(5, 5);
             this.dgvHospitais.MultiSelect = false;
             this.dgvHospitais.Name = "dgvHospitais";
             this.dgvHospitais.RowHeadersVisible = false;
             this.dgvHospitais.RowTemplate.Height = 25;
             this.dgvHospitais.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHospitais.Size = new System.Drawing.Size(728, 612);
+            this.dgvHospitais.Size = new System.Drawing.Size(726, 636);
             this.dgvHospitais.TabIndex = 0;
             // 
             // contextMenuStrip1
