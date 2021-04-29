@@ -33,14 +33,14 @@ namespace hospital_dos_guri
             if (userType == Tipos_de_Usuario.GOVERNO)
             {
                 this.btnGestaoCadastros.Visible = true;
-                this.btnGestaoTransferencias.Visible = true;
+                
             }
             else
             {
                 this.btnSolicitarLeitos.Visible = true;
                 this.btnOfertarLeitos.Visible = true;
             }
-
+            this.btnGestaoTransferencias.Visible = true;
             this.btnClose.Visible = true;
         }
 
@@ -95,7 +95,7 @@ namespace hospital_dos_guri
         {
             this.panelRight.Controls.Clear();
 
-            FormGerenciaTransferencias formGerenciaTransferencias = new FormGerenciaTransferencias();
+            FormGerenciaTransferencias formGerenciaTransferencias = new FormGerenciaTransferencias(this.formLogin.CurrentUser);
             formGerenciaTransferencias.TopLevel = false;
             formGerenciaTransferencias.AutoScroll = true;
             formGerenciaTransferencias.Dock = DockStyle.Fill;

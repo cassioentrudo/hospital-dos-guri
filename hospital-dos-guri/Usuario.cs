@@ -74,10 +74,14 @@ namespace hospital_dos_guri
             return hospitais;
         }
 
-        public static BindingList<Transferencias> PesquisaTransferenciasPendentes()
+        public BindingList<Transferencias> PesquisaTransferencias()
         {
             LocalDatabase db = new LocalDatabase();
-            string query = $"SELECT * FROM Transferencias WHERE Status == 'p'";
+            string query;
+            if ((Tipos_de_Usuario)this.Tipo_Usuario == Tipos_de_Usuario.GOVERNO)
+                 query = $"SELECT * FROM Transferencias ";//WHERE Status == 'p'";
+            else
+                query = $"SELECT * FROM Transferencias WHERE ID_Hospital_Origem == (SELECT ID_Hospital FROM Hospital WHERE ID_Usuario = {this.ID_Usuario})";
             SQLiteDataReader sqlite_datareader = db.Query(query);
 
             BindingList<Transferencias> transferencias = new BindingList<Transferencias>();
