@@ -104,7 +104,7 @@ namespace hospital_dos_guri
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.Size = new System.Drawing.Size(327, 23);
             this.tbSenha.TabIndex = 3;
-            this.tbSenha.Text = "1234567";
+            this.tbSenha.Text = "senha_gov_segura";
             this.tbSenha.UseSystemPasswordChar = true;
             // 
             // tbUsuario
@@ -113,7 +113,7 @@ namespace hospital_dos_guri
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(327, 23);
             this.tbUsuario.TabIndex = 2;
-            this.tbUsuario.Text = "hosp_salv";
+            this.tbUsuario.Text = "gov_1";
             // 
             // lbSenha
             // 

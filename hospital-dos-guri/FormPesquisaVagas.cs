@@ -41,7 +41,7 @@ namespace hospital_dos_guri
                 int vagasnecessarias = formSolicitaLeito.Quantidade;
                 Hospital hospitalDestino = (Hospital)this.dgvHospitais.CurrentRow.DataBoundItem;
 
-                string query = $"Insert into Transferencias ({nameof(Transferencias.ID_Hospital_Origem)}, {nameof(Transferencias.ID_Hospital_Destino)}, {tipo_leito} , Status) VALUES ({this.hospital.ID_Hospital}, {hospitalDestino.ID_Hospital}, {vagasnecessarias}, 'r')";
+                string query = $"Insert into Transferencias ({nameof(Transferencias.ID_Hospital_Origem)}, {nameof(Transferencias.ID_Hospital_Destino)}, {tipo_leito} , Status) VALUES ({this.hospital.ID_Hospital}, {hospitalDestino.ID_Hospital}, {vagasnecessarias}, 'p')";
 
                 LocalDatabase db = new LocalDatabase();
                 db.UpdateQuery(query);

@@ -52,19 +52,19 @@ namespace hospital_dos_guri
             
             switch (tipoVagas)
             {
-                case "Leitos de Emergência":
+                case nameof(Hospital.Emergencia):
                     query = $"UPDATE Hospital SET Emergencia = Emergencia + {numVagas} WHERE ( ID_Hospital == {this.ID_Hospital})";
                     this.Emergencia += numVagas;
                     break;
-                case "Leitos de UTI Adulta":
+                case nameof(Hospital.UTI_Adulto):
                     query = $"UPDATE Hospital SET UTI_Adulto = UTI_Adulto + {numVagas} WHERE ( ID_Hospital == {this.ID_Hospital})";
                     this.UTI_Adulto += numVagas;
                     break;
-                case "Leitos de UTI Neonatal":
+                case nameof(Hospital.UTI_Neonatal):
                     query = $"UPDATE Hospital SET UTI_Neonatal = UTI_Neonatal + {numVagas} WHERE ( ID_Hospital == {this.ID_Hospital})";
                     this.UTI_Neonatal += numVagas;
                     break;
-                case "Leitos de UTI Pediatrica":
+                case nameof(Hospital.UTI_Pediatrica):
                     query = $"UPDATE Hospital SET UTI_Pediatrica = UTI_Pediatrica + {numVagas} WHERE ( ID_Hospital == {this.ID_Hospital})";
                     this.UTI_Pediatrica += numVagas;
                     break;

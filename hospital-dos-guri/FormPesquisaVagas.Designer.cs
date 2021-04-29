@@ -29,7 +29,6 @@ namespace hospital_dos_guri
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.tbCep = new System.Windows.Forms.TextBox();
@@ -43,7 +42,6 @@ namespace hospital_dos_guri
             this.btnBuscaHospitais = new System.Windows.Forms.Button();
             this.panelAll = new System.Windows.Forms.Panel();
             this.dgvHospitais = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -203,11 +201,6 @@ namespace hospital_dos_guri
             this.dgvHospitais.Size = new System.Drawing.Size(726, 636);
             this.dgvHospitais.TabIndex = 0;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // FormPesquisaVagas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -244,7 +237,6 @@ namespace hospital_dos_guri
         private System.Windows.Forms.Label lbNomeHospital;
         private System.Windows.Forms.TextBox tbNomeHospital;
         private System.Windows.Forms.TextBox tbCidadeHospital;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox tbCep;
         private System.Windows.Forms.Label label1;
     }

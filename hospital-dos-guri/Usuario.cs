@@ -77,7 +77,7 @@ namespace hospital_dos_guri
         public static BindingList<Transferencias> PesquisaTransferenciasPendentes()
         {
             LocalDatabase db = new LocalDatabase();
-            string query = $"SELECT * FROM Transferencias WHERE Status == 'r'";
+            string query = $"SELECT * FROM Transferencias WHERE Status == 'p'";
             SQLiteDataReader sqlite_datareader = db.Query(query);
 
             BindingList<Transferencias> transferencias = new BindingList<Transferencias>();
@@ -100,7 +100,5 @@ namespace hospital_dos_guri
             db.Close();
             return transferencias;
         }
-    }
-
-    
+    }    
 }
