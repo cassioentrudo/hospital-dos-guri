@@ -125,10 +125,10 @@ namespace hospital_dos_guri
             this.cbTipoLeito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoLeito.FormattingEnabled = true;
             this.cbTipoLeito.Items.AddRange(new object[] {
-            "Leitos de Emergência",
-            "Leitos de UTI Adulta",
-            "Leitos de UTI Neonatal",
-            "Leitos de UTI Pediatrica"});
+            "Emergencia",
+            "UTI_Adulto",
+            "UTI_Neonatal",
+            "UTI_Pediatrica"});
             this.cbTipoLeito.Location = new System.Drawing.Point(7, 47);
             this.cbTipoLeito.Name = "cbTipoLeito";
             this.cbTipoLeito.Size = new System.Drawing.Size(361, 23);

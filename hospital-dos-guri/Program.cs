@@ -15,7 +15,7 @@ namespace hospital_dos_guri
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
-            
+            //Application.Run(new FormSolicitaCadastro());
         }
     }
 }

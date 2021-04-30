@@ -12,7 +12,7 @@ namespace hospital_dos_guri
             InitializeComponent();
             this.dgvHospitais.DataSource = this.governo.ListaUsuariosPendentes();
 
-            this.dgvHospitais.Columns[nameof(Hospital.Nome_Hospital)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //this.dgvHospitais.Columns[nameof(Hospital.Nome_Hospital)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void btAprova_Click(object sender, EventArgs e)
@@ -23,7 +23,7 @@ namespace hospital_dos_guri
 
             this.dgvHospitais.DataSource = this.governo.ListaUsuariosPendentes();
 
-            this.dgvHospitais.Columns[nameof(Hospital.Nome_Hospital)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //this.dgvHospitais.Columns[nameof(Hospital.Nome_Hospital)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void btRejeita_Click(object sender, EventArgs e)
@@ -33,7 +33,8 @@ namespace hospital_dos_guri
 
             this.dgvHospitais.DataSource = this.governo.ListaUsuariosPendentes();
 
-            this.dgvHospitais.Columns[nameof(Hospital.Nome_Hospital)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //this.dgvHospitais.Columns[nameof(Hospital.Nome_Hospital)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            
         }
     }
 }

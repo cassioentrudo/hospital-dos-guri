@@ -107,25 +107,25 @@ namespace hospital_dos_guri
             //Satura numVagas de acordo com o número de vagas disponíveis
             switch (tipoVagas)
             {
-                case "Leitos de Emergência":
+                case nameof(Hospital.Emergencia):
                     if (numVagas > this.Emergencia)
                         numVagas = (int)this.Emergencia;
                     query = $"UPDATE Hospital SET Emergencia = Emergencia - {numVagas} WHERE ( ID_Hospital == {this.ID_Hospital})";
                     this.Emergencia -= numVagas;
                     break;
-                case "Leitos de UTI Adulta":
+                case nameof(Hospital.UTI_Adulto):
                     if (numVagas > this.UTI_Adulto)
                         numVagas = (int)this.UTI_Adulto;
                     query = $"UPDATE Hospital SET UTI_Adulto = UTI_Adulto - {numVagas} WHERE ( ID_Hospital == {this.ID_Hospital})";
                     this.UTI_Adulto -= numVagas;
                     break;
-                case "Leitos de UTI Neonatal":
+                case nameof(Hospital.UTI_Neonatal):
                     if (numVagas > this.UTI_Neonatal)
                         numVagas = (int)this.UTI_Neonatal;
                     query = $"UPDATE Hospital SET UTI_Neonatal = UTI_Neonatal - {numVagas} WHERE ( ID_Hospital == {this.ID_Hospital})";
                     this.UTI_Neonatal -= numVagas;
                     break;
-                case "Leitos de UTI Pediatrica":
+                case nameof(Hospital.UTI_Pediatrica):
                     if (numVagas > this.UTI_Pediatrica)
                         numVagas = (int)this.UTI_Pediatrica;
                     query = $"UPDATE Hospital SET UTI_Pediatrica = UTI_Pediatrica - {numVagas} WHERE ( ID_Hospital == {this.ID_Hospital})";
@@ -151,9 +151,11 @@ namespace hospital_dos_guri
         public static void SolicitaCadastro(string nomeUsuario, string nomeHospital, string senha, string CEP, string cidade)
         {
             LocalDatabase db = new LocalDatabase();
+            //primeiro o usuario do hospital é inserido no banco com a flag 'p' para pendente
             string query = $"INSERT INTO Usuario (Tipo_usuario,Nome_Usuario,Valido,Senha) Values(1,\"{nomeUsuario}\",'p',\"{senha}\")";
             db.Query(query);
 
+            //Na sequência sao inseridas as informações do hospital na tabela, com os numeros de vagas todos em 0
             query = $"INSERT INTO Hospital(ID_Usuario,Nome_Hospital,CEP,Cidade,UTI_Adulto,UTI_Neonatal,UTI_Pediatrica,Emergencia) " +
                 $"Values((Select ID_Usuario from Usuario WHERE Nome_Usuario =\"{nomeUsuario}\"),\"{nomeHospital} \",\"{CEP}\",\"{cidade}\",0,0,0,0)";
             db.Query(query);
