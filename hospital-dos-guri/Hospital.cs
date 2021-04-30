@@ -20,6 +20,10 @@ namespace hospital_dos_guri
         {
 
         }
+        /// <summary>
+        /// Iniciação da classe a partir de um usuário de entrada
+        /// </summary>
+        /// <param name="user"> Contém informações usadas para ler demais parâmetros do hospital</param>
         public Hospital(Usuario user)
         {
             this.ID_Usuario = user.ID_Usuario;
@@ -27,9 +31,12 @@ namespace hospital_dos_guri
             this.Nome_Usuario = user.Nome_Usuario;
 
             LocalDatabase db = new LocalDatabase();
+            //Criação de query para ler informações do hospital
             string query = $"SELECT * FROM Hospital Where ID_Usuario = {this.ID_Usuario}";    
 
+            //Solicita infos ao banco
             SQLiteDataReader sqlite_datareader = db.Query(query);
+            ///Preenche atributos com retorno do banco
             if (sqlite_datareader.Read())
             {
                 this.ID_Hospital = (Int64)sqlite_datareader[nameof(Hospital.ID_Hospital)];
@@ -45,11 +52,18 @@ namespace hospital_dos_guri
             db.Close();
         }
 
+        /// <summary>
+        /// Responsável por solicitar ao banco atualização das informações de Vagas ofertadas
+        /// pelo hospital em questão
+        /// </summary>
+        /// <param name="numVagas"> Numero de vagas a ser inserido</param>
+        /// <param name="tipoVagas"> Tipo de vagas</param>
         public void OfertarVagas(int numVagas, string tipoVagas)
         {
             LocalDatabase db = new LocalDatabase();
             string query;
             
+            //Constroi query de acordo com o tipo de vaga de entrada
             switch (tipoVagas)
             {
                 case nameof(Hospital.Emergencia):
@@ -74,15 +88,23 @@ namespace hospital_dos_guri
 
             }
             
+            //Realiza a query solicitada
             db.UpdateQuery(query);
             db.Close();
         }
 
+        /// <summary>
+        /// Responsável por decrementar o número de vagas ofertadas
+        /// </summary>
+        /// <param name="numVagas"> Número de vagas canceladas</param>
+        /// <param name="tipoVagas"> Tipo de vagas canceladas</param>
         public void CancelarVagas(int numVagas, string tipoVagas)
         {
             LocalDatabase db = new LocalDatabase();
             string query;
 
+            //Forma a string de solicitação ao banco de acordo com a entrada
+            //Satura numVagas de acordo com o número de vagas disponíveis
             switch (tipoVagas)
             {
                 case "Leitos de Emergência":
@@ -118,6 +140,14 @@ namespace hospital_dos_guri
             db.Close();
         }
 
+        /// <summary>
+        /// Função que cria solicitação de cadastro para um novo hospital
+        /// </summary>
+        /// <param name="nomeUsuario"></param>
+        /// <param name="nomeHospital"></param>
+        /// <param name="senha"></param>
+        /// <param name="CEP"></param>
+        /// <param name="cidade"></param>
         public static void SolicitaCadastro(string nomeUsuario, string nomeHospital, string senha, string CEP, string cidade)
         {
             LocalDatabase db = new LocalDatabase();

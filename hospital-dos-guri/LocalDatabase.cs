@@ -9,7 +9,10 @@ namespace hospital_dos_guri
     public class LocalDatabase
     {
         SQLiteConnection sqLite;
-
+        /// <summary>
+        /// Inicialização da comunicação com o banco SQLite
+        /// Cada instância criada inicia uma comuniucação e a termina ao ser finalizada
+        /// </summary>
         public LocalDatabase()
         {
             try
@@ -24,12 +27,18 @@ namespace hospital_dos_guri
 
             }
         }
-
+        /// <summary>
+        /// Função para encerrar manualmente a comunicação com o banco
+        /// </summary>
         public void Close()
         {
             this.sqLite.Close();
         }
-
+        /// <summary>
+        /// Utilizada para realizar uma busca no banco
+        /// </summary>
+        /// <param name="query">String que representa a solicitação que será feita ao banco</param>
+        /// <returns> Retorna um SQLDataReader com as informações devolvidas pelo banco para a solicitação feita</returns>
         public SQLiteDataReader Query(string query)
         {
             SQLiteDataReader sqlite_datareader;
@@ -42,6 +51,10 @@ namespace hospital_dos_guri
             return sqlite_datareader;
         }
 
+        /// <summary>
+        /// Função utilizada para fazer querys com o banco que gerem uma atualização do banco
+        /// </summary>
+        /// <param name="query">String que contém a atualização a ser feita no banco</param>
         public void UpdateQuery(string query)
         {
             SQLiteCommand sqlite_cmd;

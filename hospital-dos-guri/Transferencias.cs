@@ -1,5 +1,8 @@
 ﻿namespace hospital_dos_guri
 {
+    /// <summary>
+    /// Classe responsável por armazenar informações de Transferências
+    /// </summary>
     public class Transferencias
     {
         public long ID_Transferencia { get; set; }

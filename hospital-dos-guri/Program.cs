@@ -6,7 +6,7 @@ namespace hospital_dos_guri
     static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        ///  Entrada principal do programa
         /// </summary>
         [STAThread]
         static void Main()
@@ -15,8 +15,7 @@ namespace hospital_dos_guri
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
-            //Application.Run(new FormGerenciamentoHospital());
-            //Application.Run(new FormMain());
+            
         }
     }
 }
